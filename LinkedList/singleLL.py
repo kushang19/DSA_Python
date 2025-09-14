@@ -1,3 +1,5 @@
+# https://www.youtube.com/watch?v=qp8u-frRAnU
+
 class Node:
     def __init__(self, data=None, next=None):
         self.data = data
@@ -16,31 +18,31 @@ class LinkedList:
             print("Linked List is empty")
             return
         
-        itr = self.head
+        temp = self.head
         llstr = ""
-        while itr:
-            llstr += str(itr.data) + "-->"
-            # print("start itr ", itr.next, itr.data)
-            itr = itr.next
+        while temp:
+            llstr += str(temp.data) + "-->"
+            # print("start temp ", temp.next, temp.data)
+            temp = temp.next
 
         print(llstr)
 
 
-    # Why while itr and not while itr.next?
+    # Why while temp and not while temp.next?
 
-    # while itr: processes every node, including the last one.
+    # while temp: processes every node, including the last one.
 
-    # while itr.next: would stop at the last node, but would not process it. We use this in insert_at_end because we needed to find the last node, not process it.
+    # while temp.next: would stop at the last node, but would not process it. We use this in insert_at_end because we needed to find the last node, not process it.
         
     def insert_at_end(self, data):
         if self.head is None:
             self.head = Node(data,None)
             return
-        itr = self.head
-        while itr.next:
-            itr = itr.next
+        temp = self.head
+        while temp.next:
+            temp = temp.next
         
-        itr.next = Node(data, None)
+        temp.next = Node(data, None)
 
     def insert_values(self, data_list):
         self.head = None
@@ -49,10 +51,10 @@ class LinkedList:
     
     def get_length(self):
         count = 0
-        itr = self.head
-        while itr:
+        temp = self.head
+        while temp:
             count += 1
-            itr = itr.next
+            temp = temp.next
         return count
     
     def remove_at(self,index):
@@ -64,12 +66,12 @@ class LinkedList:
             return 
         
         count = 0
-        itr = self.head
-        while itr:
+        temp = self.head
+        while temp:
             if count == index - 1:
-                itr.next = itr.next.next
+                temp.next = temp.next.next
                 break
-            itr = itr.next
+            temp = temp.next
             count += 1
 
     def insert_at(self, index, data):
@@ -80,16 +82,16 @@ class LinkedList:
             self.insert_at_begining(data)
 
         count = 0
-        itr = self.head
+        temp = self.head
 
-        while itr:
+        while temp:
 
             if count == index - 1:
-                node = Node(data, itr.next)
-                itr.next = node
+                node = Node(data, temp.next)
+                temp.next = node
                 break
 
-            itr = itr.next
+            temp = temp.next
             count += 1
  
 

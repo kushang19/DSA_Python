@@ -24,6 +24,13 @@ class LinkedList:
             itr = itr.next
 
         print(llstr)
+
+
+    # Why while itr and not while itr.next?
+
+    # while itr: processes every node, including the last one.
+
+    # while itr.next: would stop at the last node, but would not process it. We use this in insert_at_end because we needed to find the last node, not process it.
         
     def insert_at_end(self, data):
         if self.head is None:

@@ -1,4 +1,4 @@
-1. Data Structures
+1. Data Structures ***************
 
 Arrays & Strings
 Linked Lists (singly, doubly, circular)
@@ -15,7 +15,7 @@ Graphs
     Traversals (BFS, DFS)
     Union-Find (Disjoint Set)
 
-2. Algorithms
+2. Algorithms *******************
 
 Complexity Analysis (Big-O, Big-Ω, Big-Θ)
 Sorting Algorithms (Quick, Merge, Heap, Counting, Radix)
@@ -35,7 +35,7 @@ String Algorithms
     Suffix Array / Suffix Tree basics
 
 
-3. System Design (High-Level & Low-Level)
+3. System Design (High-Level & Low-Level) *****************
 
 OOP principles (Encapsulation, Abstraction, Inheritance, Polymorphism)
 Design Patterns (Factory, Singleton, Observer, etc.)
@@ -53,7 +53,7 @@ CAP Theorem
 
 
 
-4. Operating Systems
+4. Operating Systems **************
 
 Processes vs Threads
 Concurrency & Synchronization (Locks, Semaphores, Deadlocks)
@@ -63,7 +63,7 @@ File Systems basics
 
 
 
-5. Computer Networks
+5. Computer Networks **************
 
 OSI & TCP/IP Model
 TCP vs UDP
@@ -73,13 +73,20 @@ Routing basics
 Load Balancers, CDNs
 
 
-6. Databases
+6. Databases **************
 
 Normalization & Denormalization
 Indexing & Query Optimization
 ACID properties
 Transactions & Concurrency Control
 Differences between SQL & NoSQL
+
+
+
+
+
+
+
 
 
 

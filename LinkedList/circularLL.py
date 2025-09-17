@@ -31,33 +31,74 @@ class CLL:
 
     def insert_at_end(self, data):
         n = Node(data)
-
-        if self.head is None:
-            self.head = n
-            self.tail = n
-            self.tail.next = self.head 
-        else:        
-            self.tail.next = n
-            self.tail = n # make sure to make 'n' as tail
-            self.tail.next = self.head
-    
-    def insert_at_position(self,pos,data):
-        temp = self.head
-        n = Node(data)
         if self.head is None:
             self.head = n
             self.tail = n
             self.tail.next = self.head 
         else:
-            if pos == 1:
-                self.insert_at_beginning(data)
-            else:
-                for i in range(1,pos-1):
-                    temp = temp.next
+            self.tail.next = n
+            self.tail = n
+            n.next = self.head
+            
+    def insert_at(self, data, pos):
+        n = Node(data)
+        if self.head is None:
+            self.head = n
+            self.tail = n
+            self.tail.next = self.head
+        else:
+            temp = self.head
+            for i in range(1, pos-1):
+                temp = temp.next
+            n.next = temp.next
+            temp.next = n
+    
+    def delete_at_beginning(self):
+        temp = self.head
+        self.head = temp.next
+        self.tail.next = self.head
+        
+    def delete_at_end(self):
+        if self.head == self.tail:
+            self.tail = None
+            self.head = None
+            return
+        
+        temp = self.head
+        while temp.next != self.tail:
+            temp = temp.next
+        
+        self.tail = temp 
+        temp.next = self.head
+        
+    
+    def get_length(self):
+        if self.head is None:
+            return 
+        else:
+            temp = self.head 
+            count = 1
+            while temp.next != self.tail.next:
+                temp = temp.next
+                count += 1
+            
+            print("count=", count)
+            return count
+        
 
-                n.next = temp.next
-                temp.next = n
-
+    def delete_at_pos(self,pos):
+        if pos == 0:
+            self.delete_at_beginning()
+        
+        if pos > self.get_length():
+            print("Invalid Index")
+            return
+        
+        temp = self.head
+        for i in range(1,pos-1):
+            temp = temp.next 
+        
+        temp.next = temp.next.next
 
 l = CLL()
 n1 = Node(10)
@@ -75,10 +116,21 @@ l.tail.next = n3
 l.tail = n3
 l.tail.next = l.head
 
-l.insert_at_beginning(5)
-l.insert_at_end(35)
-l.insert_at_end(45)
-
-l.insert_at_position(1,25)
+l.insert_at_beginning(0)
+l.insert_at_end(40)
+l.insert_at(25,4)
 
 l.display()
+l.get_length()
+
+l.delete_at_beginning()
+l.display()
+l.get_length()
+
+l.delete_at_end()
+l.display()
+l.get_length()
+
+l.delete_at_pos(3)
+l.display()
+l.get_length()

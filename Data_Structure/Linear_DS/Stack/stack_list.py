@@ -32,16 +32,16 @@ def display():
 stack = list()
 while(1):
     print("Enter the options from below:\n1-PUSH Opretaion\n2-POP Opretaion\n3-Display Opretaion\nEnter any key to EXIT Program")
-    str = int(input())
-    if str == 1:
+    choice = int(input())
+    if choice == 1:
         print("PUSH OPERATION")
         push()
         print()
-    elif str == 2:
+    elif choice == 2:
         print("POP OPERATION")
         pop()
         print()
-    elif str == 3:
+    elif choice == 3:
         print("DISPLAY OPERATION")
         display()
         print()

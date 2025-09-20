@@ -17,7 +17,7 @@ Trees
     Binary Search Tree (BST)
     Lowest Common Ancestor (LCA)
 
-    Heaps (Min-Heap, Max-Heap, Heapify, HeapSort)
+Heaps (Min-Heap, Max-Heap, Heapify, HeapSort)
 Trie (prefix tree, autocomplete problems)
 
 Graphs

@@ -1,5 +1,5 @@
 
-# ============================= Stack using list ====================================
+# ============================= Stack(LIFO) using list ====================================
 
 def push():
     n = int(input("Enter the element to be inserted in stack: "))

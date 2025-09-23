@@ -1,3 +1,5 @@
+# ================ DEQueue using lists ===================
+
 
 def enqueueR(data):
     print("Inserting data to Rear:",data)
@@ -22,6 +24,13 @@ def dequeueF():
     else:
         print("Deleting data at Front", q[0])
         del q[0]
+def dequeueR():
+    n = len(q)
+    if n == 0:
+        print("Queue is Empty")
+    else:
+        print("Deleting data from Rear", q[n-1])
+        del q[n-1]
 
 def display():
     if len(q) == 0:
@@ -41,7 +50,7 @@ enqueueR(30)
 display()
 enqueueF(40)
 enqueueF(50)
-enqueueF(60)
-enqueueR(90)
+dequeueF()
+dequeueR()
 display()
 

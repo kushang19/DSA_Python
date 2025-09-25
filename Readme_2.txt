@@ -70,3 +70,27 @@ then non-linear structures (trees, graphs, heaps) →
 then algorithms (sorting, DP, greedy, divide-conquer) →
 
 finally advanced topics + CS fundamentals + system design.
+
+
+
+
+============================================================================================
+============================================================================================
+
+📌 So the ideal flow after Deque is:
+
+Recursion & Backtracking
+
+Hashing (Hash tables, maps, sets, collision handling basics)
+
+Binary Trees (BT) → Preorder, Inorder, Postorder traversal
+
+Binary Search Trees (BST) → Insert, delete, search
+
+Heaps & Priority Queue
+
+Min Heap / Max Heap
+
+Heapify, Heap Sort
+
+Implementing Priority Queue using Heap

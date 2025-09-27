@@ -1,0 +1,56 @@
+✅ Beginner Level (Base Case + Small Recursion)
+
+Sum of digits of a number
+sum_digits(1234) → 10
+
+Count vowels in a string recursively
+
+Find the minimum/maximum element in a list recursively
+
+Reverse a number (e.g., 123 → 321) using recursion
+
+Power function using recursion
+pow(x, n) → x^n
+
+
+
+🟡 Intermediate Level (Recursive patterns)
+
+Check if a string is a palindrome (no loops or slicing)
+
+Print all subsets of a string
+Example: "ab" → ["", "a", "b", "ab"]
+
+Count consonants in a string recursively
+
+Product of all elements in a list
+
+Count number of occurrences of a substring in a string
+count_substring("aaaa", "aa") → 3
+
+
+
+🔵 Advanced Level (More thinking required)
+
+Tower of Hanoi (classic)
+
+Generate all permutations of a string
+"abc" → ["abc", "acb", "bac", "bca", "cab", "cba"]
+
+Binary Search (recursively)
+
+Check if an array is sorted recursively
+
+Find the number of ways to climb stairs (n steps, you can take 1 or 2 steps at a time)
+Classic recursion + DP pattern → f(n) = f(n-1) + f(n-2)
+
+
+
+🚀 Expert Recursion Challenges
+
+Solve N-Queens Problem (Backtracking + Recursion)
+
+Generate Balanced Parentheses combinations
+Example for n=2: ["(())", "()()"]
+
+Subset Sum Problem using recursion

@@ -1,0 +1,33 @@
+| Formula / Pattern                | Exact Math           | Big O Result   | Where It Appears                         |
+| -------------------------------- | -------------------- | -------------- | ---------------------------------------- |
+| `1 + 1 + 1 + ... + 1 (n times)`  | `n`                  | **O(n)**       | Simple loops                             |
+| `1 + 2 + 3 + ... + n`            | `n(n + 1)/2`         | **O(n²)**      | Nested loops adding increasing cost      |
+| `1² + 2² + 3² + ... + n²`        | `n(n + 1)(2n + 1)/6` | **O(n³)**      | Rare, but useful in 3-level multipliers  |
+| `2⁰ + 2¹ + 2² + ... + 2ⁿ`        | `2^(n+1) - 1`        | **O(2ⁿ)**      | Recursive branching (like Fibonacci)     |
+| `log(1) + log(2) + ... + log(n)` | `log(n!)`            | **O(n log n)** | Appears in sorting & heaps               |
+| `n * log(n)`                     | (Just memorize)      | **O(n log n)** | Merge Sort, QuickSort (average)          |
+| `1/2 + 1/4 + 1/8 + ...`          | Converges ~ 1        | **O(1)**       | Halving operations (e.g., binary search) |
+| `n + n/2 + n/4 + ...`            | `2n`                 | **O(n)**       | Loops cutting work by half               |
+
+
+| Pattern to Recognize                                         | Big-O           |
+| ------------------------------------------------------------ | --------------- |
+| **Constant work per iteration** → `for i in range(n)`        | **O(n)**        |
+| **Work increases each time (1 + 2 + ... + n)**               | **O(n²)**       |
+| **Nested loop like `for i in range(n): for j in range(n):`** | **O(n²)**       |
+| **Loop with halving (`i = i // 2`)**                         | **O(log n)**    |
+| **Two nested halving loops**                                 | **O((log n)²)** |
+| **Recursion calling itself twice (`f(n-1) + f(n-1)`)**       | **O(2ⁿ)**       |
+
+
+🧠 If You Memorize Just These 5 Rules, You'll Solve 90% Questions
+
+Simple Loop → O(n)
+
+Nested Loop → O(n²)
+
+Divide by 2 Every Time → O(log n)
+
+Loop + Halving Inside → O(n log n)
+
+Double Recursion → O(2ⁿ)

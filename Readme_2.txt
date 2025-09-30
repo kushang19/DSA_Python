@@ -27,7 +27,7 @@ Graphs
     Shortest Path (Dijkstra, Bellman-Ford)
     Minimum Spanning Tree (Kruskal, Prim)
 
-🔹 Step 4: Algorithmic Paradigms
+🔹 Step 4: Algorithmic Paradigms (https://www.youtube.com/watch?v=JeKig3OLsM8&list=PLLOxZwkBK52AvXNogQoZ5o35GNlygw_YD&index=1)
 
 Sorting Algorithms (Merge, Quick, Heap, Counting, Radix)
 Searching Algorithms (Binary Search + variations)

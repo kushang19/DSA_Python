@@ -15,7 +15,9 @@ Graphs
     Traversals (BFS, DFS)
     Union-Find (Disjoint Set)
 
-2. Algorithms *******************
+2. Algorithms ******************* 
+
+https://www.youtube.com/watch?v=JeKig3OLsM8&list=PLLOxZwkBK52AvXNogQoZ5o35GNlygw_YD&index=1
 
 Complexity Analysis (Big-O, Big-Ω, Big-Θ)
 Sorting Algorithms (Quick, Merge, Heap, Counting, Radix)

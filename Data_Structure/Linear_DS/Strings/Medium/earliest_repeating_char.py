@@ -33,3 +33,19 @@ def check_repeating_char(s):
         
 
 print(check_repeating_char(s), " is the first letter that repeats")
+
+# GFG Method (Recommended): 
+
+a = 'hello'
+
+def check_repeating_char(s):
+    n = len(s)
+    for i in range(n):
+        for j in range(i):
+            if s[i] == s[j]:
+                return s[i]
+            
+    return -1
+        
+
+print(check_repeating_char(a), " is the first letter that repeats")

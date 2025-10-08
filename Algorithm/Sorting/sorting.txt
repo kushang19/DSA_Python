@@ -1,0 +1,58 @@
+🧮 A. Simple (Basic) Sorting Algorithms
+
+These are easy to understand and implement — perfect to start with:
+
+Algorithm	Technique	Time Complexity (Average)	Stable?	Best for learning recursion?
+Bubble Sort	Compare adjacent elements & swap	O(n²)	✅	❌ (iterative)
+Selection Sort	Pick the smallest each pass	O(n²)	❌	❌
+Insertion Sort	Build sorted part one by one	O(n²)	✅	❌
+Recursive Insertion Sort	Same as above, but recursive	O(n²)	✅	✅
+
+
+⚙️ B. Divide & Conquer Sorting Algorithms
+
+These use recursion heavily — perfect next step after your recursion practice.
+
+Algorithm	Idea	Time Complexity	Stable?
+Merge Sort	Divide array in halves, sort each, merge	O(n log n)	✅
+Quick Sort	Pick a pivot, partition, recursively sort	O(n log n)	❌ (usually)
+Heap Sort	Use heap data structure	O(n log n)	❌
+
+
+💨 C. Advanced / Non-Comparison Based
+
+These are used for special types of input (like integers or strings).
+
+Algorithm	Idea	Time Complexity	Stable?
+Counting Sort	Count frequencies of numbers	O(n + k)	✅
+Radix Sort	Sort digits from LSD to MSD	O(nk)	✅
+Bucket Sort	Distribute into buckets, sort inside	O(n + k)	✅
+🧠 3️⃣ The Ideal Learning Path (Recommended for You)
+
+Since you already know recursion, here’s the perfect roadmap 👇
+
+Step	Algorithm	Why
+1	Bubble Sort	Easiest to visualize swaps
+2	Selection Sort	Understand how min/max selection works
+3	Insertion Sort	Helps understand “building sorted array”
+4	Merge Sort (Recursive)	First real recursive sorting algorithm
+5	Quick Sort (Recursive)	Reinforces recursion + partitioning logic
+6	Heap Sort	Bridges sorting + tree data structure
+7	Counting / Radix Sort	Introduces non-comparison sorting
+⚡ 4️⃣ What I’ll Teach You (if you want to proceed)
+
+For each algorithm:
+
+🧩 Concept Explanation (intuitive visual)
+
+🧮 Step-by-step dry run
+
+🧠 Recursive intuition (if applicable)
+
+💻 Clean Python implementation
+
+⏱️ Time & Space Complexity analysis
+
+⚔️ Comparison with others
+
+🎯 When to use it in real problems

@@ -1,6 +1,7 @@
 # Selection Sort
 
-arr = [3,2,6,8,1]
+# arr = [3,2,6,8,1]
+arr = [16,15,4,13,2,1]
 
 def selection_sort(a):
     n = len(a)

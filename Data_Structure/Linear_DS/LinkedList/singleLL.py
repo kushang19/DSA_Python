@@ -1,108 +1,130 @@
-# https://www.youtube.com/watch?v=qp8u-frRAnU
-
 class Node:
-    def __init__(self, data=None, next=None):
+    def __init__(self, data, next=None):
         self.data = data
         self.next = next
 
-class LinkedList:
+class SLL:
     def __init__(self):
         self.head = None
-    
-    def insert_at_begining(self, data):
-        node = Node(data, self.head)
-        self.head = node
-    
-    def print(self):
+
+    def display(self):
         if self.head is None:
-            print("Linked List is empty")
-            return
-        
-        temp = self.head
-        llstr = ""
-        while temp:
-            llstr += str(temp.data) + "-->"
-            # print("start temp ", temp.next, temp.data)
-            temp = temp.next
+            print("Empty Singly Linked List")
+        else:
+            temp = self.head
+            while temp:
+                print(temp.data, "-->", end=" ")
+                temp = temp.next
+            print()
 
-        print(llstr)
+    def insert_at_beginning(self, data):
+        n = Node(data)
+        n.next = self.head
+        self.head = n
 
-
-    # Why while temp and not while temp.next?
-
-    # while temp: processes every node, including the last one.
-
-    # while temp.next: would stop at the last node, but would not process it. We use this in insert_at_end because we needed to find the last node, not process it.
-        
     def insert_at_end(self, data):
+        n = Node(data)
         if self.head is None:
-            self.head = Node(data,None)
+            self.head = n
+        else:
+            temp = self.head
+            while temp.next is not None:
+                temp = temp.next
+            temp.next = n
+
+    def insert_at_position(self, pos, data):
+        if pos == 1:
+            self.insert_at_beginning(data)
             return
-        temp = self.head
-        while temp.next:
-            temp = temp.next
-        
-        temp.next = Node(data, None)
 
-    def insert_values(self, data_list):
-        self.head = None
-        for data in data_list:
-            self.insert_at_end(data)
-    
-    def get_length(self):
-        count = 0
-        temp = self.head
-        while temp:
-            count += 1
-            temp = temp.next
-        return count
-    
-    def remove_at(self,index):
-        if index<0 or index>= self.get_length():
-            raise Exception("Invalid Index")
-        
-        if index == 0:
-            self.head = self.head.next
-            return 
-        
-        count = 0
-        temp = self.head
-        while temp:
-            if count == index - 1:
-                temp.next = temp.next.next
-                break
-            temp = temp.next
-            count += 1
-
-    def insert_at(self, index, data):
-        if index < 0 or index >= self.get_length():
-            raise Exception("Invalid Index")
-        
-        if index == 0:
-            self.insert_at_begining(data)
-
-        count = 0
+        n = Node(data)
         temp = self.head
 
-        while temp:
-
-            if count == index - 1:
-                node = Node(data, temp.next)
-                temp.next = node
-                break
-
+        for i in range(1, pos - 1):
+            if temp is None:
+                print("Position out of range")
+                return
             temp = temp.next
-            count += 1
- 
 
-ll = LinkedList()
-ll.insert_at_begining(5)
-ll.insert_at_begining(89)
-ll.insert_at_begining(100)
-ll.insert_at_end(98700)
-ll.insert_values(["apple","orange","banana","cheery"])
-ll.print()
-# ll.remove_at(3)
-ll.insert_at(3,"grapes")
-ll.print()
-print("length ", ll.get_length())
+        n.next = temp.next
+        temp.next = n
+
+    def delete_at_beginning(self):
+        if self.head is None:
+            print("List is empty")
+        else:
+            temp = self.head
+            self.head = temp.next
+            temp.next = None
+
+    def delete_at_end(self):
+        if self.head is None:
+            print("List is empty")
+            return
+        if self.head.next is None:
+            self.head = None
+            return
+        
+        temp = self.head
+        while temp.next.next is not None:
+            temp = temp.next
+        temp.next = None
+
+    def delete_at_position(self, pos):
+        if self.head is None:
+            print("List is empty")
+            return
+
+        if pos == 1:
+            self.delete_at_beginning()
+            return
+
+        temp = self.head
+        for i in range(1, pos - 1):
+            if temp.next is None:
+                print("Position out of range")
+                return
+            temp = temp.next
+
+        to_delete = temp.next
+        if to_delete is None:
+            print("Position out of range")
+            return
+        
+        temp.next = to_delete.next
+        to_delete.next = None
+
+
+# ✅ Example usage:
+l = SLL()
+n1 = Node(10)
+l.head = n1
+n2 = Node(20)
+n1.next = n2
+n3 = Node(30)
+n2.next = n3
+n4 = Node(40)
+n3.next = n4
+n5 = Node(50)
+n4.next = n5
+
+# Test operations
+l.insert_at_beginning(5)
+l.insert_at_end(60)
+l.insert_at_position(3, 25)
+l.delete_at_beginning()
+l.delete_at_end()
+l.delete_at_position(4)
+l.display()
+
+
+
+
+# if self.head.next is None:
+#     self.head = None
+#     return
+
+# ✔ Checks if there’s only one node in the list
+# ✔ If yes, delete it by setting head = None
+# ✔ Then stop the function immediately
+# ✔ Prevents errors and handles edge cases safely

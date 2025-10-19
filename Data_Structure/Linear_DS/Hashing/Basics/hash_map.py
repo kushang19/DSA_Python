@@ -1,7 +1,7 @@
 class HashTable:
     def __init__(self):
         self.MAX_SIZE = 100
-        self.arr = [None for i in range(self.MAX_SIZE)]
+        # self.arr = [None for i in range(self.MAX_SIZE)] # List Comprehension in Python
     
     def get_hash(self,key):
         h = 0

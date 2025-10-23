@@ -13,6 +13,7 @@ class HashTable:
         h = self.get_hash(key)
         found = False
         for idx, element in enumerate(self.arr[h]):
+            print('--------------------------------------------', idx, element, len(element), element[0])
             if len(element) == 2 and element[0] == key:
                 self.arr[h][idx] = (key, val)
                 found = True

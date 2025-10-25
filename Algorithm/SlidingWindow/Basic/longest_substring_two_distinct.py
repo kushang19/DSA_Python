@@ -1,4 +1,4 @@
-# 🧩 Longest Substring with At Most 2 Distinct Characters
+# 🧩 Longest Substring with At Most 2 Distinct Characters (variable-size window)
 
 def longest_substring_two_distinct(s):
     n = len(s)

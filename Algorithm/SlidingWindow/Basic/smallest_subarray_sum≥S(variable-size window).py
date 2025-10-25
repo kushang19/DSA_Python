@@ -22,12 +22,3 @@ print(smallest_subarray_with_sum_ge(arr, S))
 
 
 
-# 🪄 Step-by-step “Animation” of "abca"
-
-
-# | Step | `end` | `s[end]` | Window (s[start:end]) | `freq` changes            | Action                             | `max_len` |
-# | ---- | ----- | -------- | --------------------- | ------------------------- | ---------------------------------- | --------- |
-# | 1    | 0     | 'a'      | `'a'`                 | freq['a']=1               | no duplicate                       | 1         |
-# | 2    | 1     | 'b'      | `'ab'`                | freq['b']=1               | no duplicate                       | 2         |
-# | 3    | 2     | 'c'      | `'abc'`               | freq['c']=1               | no duplicate                       | 3         |
-# | 4    | 3     | 'a'      | `'abca'`              | freq['a']=2 ⚠️ duplicate! | start=0 → remove 'a' (freq['a']=1) | 3         |

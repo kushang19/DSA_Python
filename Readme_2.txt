@@ -18,6 +18,7 @@ Trees
     Lowest Common Ancestor (LCA)
 
 Heaps (Min-Heap, Max-Heap, Heapify, HeapSort)
+
 Trie (prefix tree, autocomplete problems)
 
 Graphs

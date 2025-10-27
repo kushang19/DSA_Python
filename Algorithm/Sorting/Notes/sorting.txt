@@ -56,3 +56,30 @@ For each algorithm:
 ⚔️ Comparison with others
 
 🎯 When to use it in real problems
+
+
+
+
+
+
+
+| Algorithm     | Core Idea                 | What moves?            | Stable? | Key Step                        |
+| ------------- | ------------------------- | ---------------------- | ------- | ------------------------------- |
+| **Bubble**    | Compare adjacents         | Largest bubbles to end | ✅       | Swap if `arr[j] > arr[j+1]`     |
+| **Selection** | Find minimum each pass    | Minimum fixed at front | ❌       | Find index of min → swap        |
+| **Insertion** | Insert into sorted prefix | Key slides left        | ✅       | Shift elements > key rightwards |
+
+
+
+| Algorithm          | Best  | Average | Worst | Space | Stable |
+| ------------------ | ----- | ------- | ----- | ----- | ------ |
+| **Bubble Sort**    | O(n)  | O(n²)   | O(n²) | O(1)  | ✅      |
+| **Selection Sort** | O(n²) | O(n²)   | O(n²) | O(1)  | ❌      |
+| **Insertion Sort** | O(n)  | O(n²)   | O(n²) | O(1)  | ✅      |
+
+
+| If you remember this…                            | You’ll never mix them up   |
+| ------------------------------------------------ | -------------------------- |
+| 🫧 **Bubble** → bubbles rise → largest goes last | Bubble = swap adjacents    |
+| 🧲 **Selection** → “select the smallest”         | Select = find min and swap |
+| 🃏 **Insertion** → like sorting cards            | Insert = shift & place key |

@@ -1,25 +1,32 @@
-# 🧠 What Bubble Sort Actually Does
+# 🧠 1. Bubble Sort — “Repeatedly push the largest to the end”
 
-# 👉 Bubble Sort repeatedly compares adjacent elements (a[j] and a[j+1]) and swaps them if they are in the wrong order.
+# Keep swapping adjacent elements if they are in the wrong order.
+# After each full pass → the largest element “bubbles” to the end. *****
 
-# After every full pass, the largest element “bubbles up” to the end of the array.
 
-# So, after 1st pass → largest is at end
-# after 2nd pass → 2nd largest is second last, and so on.
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n - 1):
+        for j in range(n - i - 1):
+            print("i:",i," ","j:",j)
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+        print(arr)
+    return arr
 
-arr = [3, 2, 6, 8, 1, 4]
+# Example
+arr = [5, 1, 4, 2, 8]
+print("Bubble:", bubble_sort(arr))
 
-def bubble_sort(a):
-    n = len(a)
 
-    print("before: ",a)
-    for i in range(n):
-        for j in range(n-1):
-            if a[j] > a[j+1]:
-                temp = a[j]
-                a[j] = a[j+1]
-                a[j+1] = temp
-        print("inside j", a)
-    print("after: ",a)  
+# 📝 Note: 
 
-bubble_sort(arr)
+# Passes = n-1
+# Comparisons: Adjacent elements
+# Largest goes last each pass
+# Stable sort ✅
+# Time: O(n²), Space: O(1)
+
+
+# 🎯 Visual tag
+# “Like bubbles rising — largest keeps floating to the end after each round.”

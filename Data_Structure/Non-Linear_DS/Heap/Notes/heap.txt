@@ -1,0 +1,26 @@
+Heap = Data Structure to manage information
+
+Heap is called as 
+-binary heap or 
+-nearly completed binary tree (levels filled except the lowest, lowest level filled to a certain point starting from the left) i.e ACBT - Almost Complete Binary Tree 
+
+Uses:
+- heapsort 
+- priority queues
+
+Type:
+- max-heap (value of node i<= parent) , use for heapsort
+- min-heap (value of node i>= parent) , use for priority queues 
+
+- height of heap is O(log n)
+
+- Note: put root of heap in index 1 instead of 0 as it keeps arithmetic cleaner
+
+
+Topics to learn :
+1. Insertion 
+2. Deletion 
+3. Heap Sort
+4. Heapify
+5. Array Representation 
+6. Priority Queue

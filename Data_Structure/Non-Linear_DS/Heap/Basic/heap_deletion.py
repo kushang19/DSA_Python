@@ -96,7 +96,7 @@ max_heap = build_max_heap(arr)
 print("Final Max Heap Array:",max_heap)
 
 # Perform Deletion
-max_heap = delete_root_max_heap(max_heap)
+max_heap = delete_root_manual(max_heap)
 print("\nAfter Deletion (New Max Heap):", max_heap)
 
 # print_heap_tree(max_heap)

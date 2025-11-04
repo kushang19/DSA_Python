@@ -1,0 +1,167 @@
+OR Operation  (|): add two bits 
+AND Operation (&): multiply two bits
+XOR Operation (^): if two bits are same ans is 0 else 1
+NOT Operation (~): opposite bit
+Left Shift Operation (<<): left shift bits and add 0 at end (it is always multiple of 2)
+Right Shift Operation (>>): right shift bits so the first bit gets disappear and we 0 at the end
+
+Precedence: ~ (Highest), <<>>, &, ^, | (lowest)
+
+
+| Operator    | Symbol | Meaning                 | Example                       |    |         |                |
+| ----------- | ------ | ----------------------- | ----------------------------- | -- | ------- | -------------- |
+| AND         | `&`    | 1 if both bits are 1    | `5 & 3 → 101 & 011 = 001 (1)` |    |         |                |
+| OR          | `      | `                       | 1 if any bit is 1             | `5 | 3 → 101 | 011 = 111 (7)` |
+| XOR         | `^`    | 1 if bits are different | `5 ^ 3 → 101 ^ 011 = 110 (6)` |    |         |                |
+| NOT         | `~`    | Inverts bits            | `~5 → -(5+1) = -6`            |    |         |                |
+| Left Shift  | `<<`   | Moves bits left         | `5 << 1 → 1010 (10)`          |    |         |                |
+| Right Shift | `>>`   | Moves bits right        | `5 >> 1 → 10 (2)`             |    |         |                |
+
+
+================================= ⚡ Step 3: Bit Tricks You’ll Use in DSA  ========================================
+
+🟢 1️⃣ Check if a number is even or odd
+
+Idea: Look at the last bit
+
+If last bit = 1 → odd
+
+If last bit = 0 → even
+
+
+def is_odd(n):
+    return n & 1 == 1
+
+print(is_odd(5))  # True
+print(is_odd(8))  # False
+
+
+
+🟢 2️⃣ Get the ith bit of a number
+
+To check if the ith bit is 1 or 0
+  
+🧩 Formula:  (n >> i) & 1
+
+
+
+🟢 3️⃣ Set the ith bit to 1
+
+🧩 Formula: n | (1 << i)
+
+
+
+🟢 4️⃣ Clear the ith bit (make it 0)
+
+🧩 Formula: n & ~(1 << i)
+
+
+🟢 5️⃣ Toggle (Flip) the ith bit
+
+🧩 Formula: n ^ (1 << i)
+
+
+
+
+🟢 6️⃣ Count number of set bits (1s)
+
+def count_set_bits(n):
+    count = 0
+    while n:
+        count += n & 1
+        n >>= 1
+    return count
+
+print(count_set_bits(13))  # 3
+
+
+Brian Kernighan’s Trick (Faster 🔥)
+
+Every iteration removes the rightmost 1-bit:
+
+def count_set_bits(n):
+    count = 0
+    while n:
+        n &= n - 1
+        count += 1
+    return count
+
+print(count_set_bits(13))  # 3
+
+
+
+
+
+🟢 7️⃣ Check if a number is power of 2
+
+A number is power of 2 if only one bit is set.
+
+🧩 Formula: n > 0 and (n & (n - 1)) == 0
+
+
+
+
+🟢 8️⃣ Swap two numbers without temp variable
+a = 5
+b = 7
+a = a ^ b
+b = a ^ b
+a = a ^ b
+print(a, b)  # 7 5
+
+
+
+🟢 9️⃣ Find single unique number (All others appear twice)
+
+arr = [2, 3, 5, 3, 2]
+unique = 0
+for num in arr:
+    unique ^= num
+print(unique)  # 5
+
+💡 Because x ^ x = 0 and x ^ 0 = x.
+
+
+
+🟢 🔟 Convert to binary manually (for understanding)
+
+def to_binary(n):
+    res = ''
+    while n:
+        res = str(n & 1) + res
+        n >>= 1
+    return res or '0'
+
+print(to_binary(13))  # '1101'
+
+
+
+
+
+
+
+
+🧩 Step 4: Practice Exercises (for beginners)
+
+Try to solve these one by one:
+
+Check if kth bit is set or not
+
+Toggle all bits of a number
+
+Count total set bits from 1 to N
+
+Reverse bits of a number (e.g., 13 → 1011 → 1101 → 11)
+
+Find 2 unique numbers where every other appears twice
+
+Add two numbers using bitwise operators (without +)
+
+
+
+| Problem Type           | Example                                   |
+| ---------------------- | ----------------------------------------- |
+| Subsets / Combinations | Use bits to represent inclusion/exclusion |
+| Optimization           | Faster arithmetic / toggling              |
+| DP with masks          | “Travelling salesman”, “Subset sum”       |
+| Math tricks            | Check power of 2, parity, etc.            |

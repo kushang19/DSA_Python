@@ -1,4 +1,4 @@
-a = [2, 8, 5, 3, 9, 4, 1, 7]
+a = [8, 2, 5, 3, 9, 4, 1, 7]
 
 def merge_sort(arr):
     if len(arr) <= 1:
@@ -6,6 +6,7 @@ def merge_sort(arr):
         return arr  # Base case
 
     mid = len(arr) // 2
+    print("mid",mid, arr[:mid],arr[mid:])
     left = merge_sort(arr[:mid])   # Divide left half
     print('left', left)
     right = merge_sort(arr[mid:])  # Divide right half
@@ -15,7 +16,7 @@ def merge_sort(arr):
 def merge(left, right):
     sorted_arr = []
     i = j = 0
-
+    print("i,j",i,j)
     # Merge step (compare and push smaller)
     while i < len(left) and j < len(right):
         if left[i] < right[j]:

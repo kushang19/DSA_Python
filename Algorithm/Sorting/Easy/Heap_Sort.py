@@ -23,6 +23,8 @@ def build_max_heap(arr):
     # Start from last non-leaf node
     for i in range(n // 2 - 1, -1, -1):
         heapify(arr, n, i)
+    
+    return arr
 
 
 def heap_sort(arr):
@@ -46,6 +48,8 @@ def heap_sort(arr):
 # arr = [4, 10, 3, 5, 1]
 arr = [1, 3, 5, 4, 6, 13, 10, 9, 8, 15, 17]
 print("Original Array:", arr)
+
+print("Max Heap Array:", build_max_heap(arr))
 
 heap_sort(arr)
 

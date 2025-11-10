@@ -57,3 +57,43 @@ print(longest_substring_two_distinct(s))
 
 
 # Final max_len = 3 → substring "ece"
+
+
+
+# If more than 2 distinct chars → shrink from start
+# while distinct > 2:
+#     freq[ord(s[start])] -=1
+#     if freq[ord(s[start])] == 0:
+#         distinct -= 1
+#     start += 1
+
+
+# 🧠 Explanation (in plain English)
+
+# This part ensures that the sliding window always contains at most 2 distinct characters.
+
+# Steps happening here:
+# The window currently has more than 2 distinct characters, so it's invalid.
+# To fix this, we start shrinking the window from the left (start).
+# For the character at position start, we reduce its frequency (freq[...] -= 1)
+# If after reducing, the frequency becomes 0, that means:
+    # This character is no longer present inside the window at all,
+    # So we decrease the distinct count.
+# Move start to the right (start += 1) making the window smaller.
+
+
+
+# Visual example
+
+# If the current window is:
+
+# "abca"   (3 distinct chars: a, b, c)
+#  ↑   ↑
+# start end
+
+
+# We shrink from the left:
+
+# Remove 'a' → window becomes "bca" → still 3 distinct
+
+# Remove 'b' → window becomes "ca" → now 2 distinct ✅

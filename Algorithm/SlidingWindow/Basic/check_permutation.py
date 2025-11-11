@@ -19,6 +19,9 @@ def check_permutation(txt, pat):
 
     freq1 = [0] * 256
     freq2 = [0] * 256
+    # This assumes ASCII characters, which is fine since your question states lowercase letters.
+    # If we wanted to be strict and use only lowercase letters, freq1 = [0] * 26 would be enough.
+    
     n = len(txt)
     w = len(pat)
 

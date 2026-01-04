@@ -53,6 +53,4 @@ max_heap = build_max_heap(arr)
 print("\n✅ Final Max Heap Array:")
 print(max_heap)
 
-print_heap_tree(max_heap)
-
-print("-------- ", 2**0)
+# print_heap_tree(max_heap)

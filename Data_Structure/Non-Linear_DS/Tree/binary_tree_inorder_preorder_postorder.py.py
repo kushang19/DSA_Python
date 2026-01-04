@@ -22,6 +22,8 @@ class BinaryTree:
                 return
             else:
                 queue.append(current.left)
+
+        
             if current.right is None:
                 current.right = new_node
                 return 

@@ -14,21 +14,18 @@
 
 
 a = [16, 17, 4, 3, 5, 2]
-# a = [1, 2, 3, 4, 5, 2]
-# Output: [17 5 2]
+
 def isLeader(a):
     n = len(a)
-    for i in range(0,n):
-        res = 0
-        for j in range(i+1, n):
-            if(a[i] >= a[j]):
-                res = 1
-            else:
-                res = -1
-                break
-        if(res == 1):
+    max_from_right = a[-1]
+    
+    print(max_from_right)       # last element is always a leader
+    
+    for i in range(n-2, -1, -1):
+        if a[i] > max_from_right:
             print(a[i])
-    print(a[n-1])
+            max_from_right = a[i]
 
 isLeader(a)
+
     

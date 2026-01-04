@@ -1,5 +1,19 @@
 # ==========================  knapsack problem  ==================================
 
+
+# Given two arrays, val[] and wt[], representing the values and weights of item respectively, and an integer capacity representing the maximum weight a knapsack can hold, we have to determine the maximum total value that can be achieved by putting the items in the knapsack without exceeding its capacity.
+# Items can also be taken in fractional parts if required.
+
+# Examples:
+
+# Input: val[] = [60, 100, 120], wt[] = [10, 20, 30], capacity = 50
+# Output: 240 
+# Explanation: We will take the items of weight 10kg and 20kg and 2/3 fraction of 30kg. 
+# Hence total value will be 60 + 100 + (2/3) * 120 = 240.
+
+# Input: val[] = [500], wt[] = [30], capacity = 10
+# Output: 166.667
+
 def fractional_knapsack(p, w, c):
     n = len(p)
     ratio = []

@@ -1,108 +1,106 @@
 class BST:
-    def __init__(self,key):
-        self.key = key
-        self.lchild = None
-        self.rchild = None
+    def __init__(self,root_data):
+        self.root = root_data
+        self.left = None
+        self.right = None
     
     def insert(self,data):
-        if self.key is None:
-            self.key = data
+        if self.root is None:
+            self.root = data
             return
         
-        if self.key == data:
+        if self.root == data:
             return 
         
-        if self.key > data:
-            if self.lchild:
-                self.lchild.insert(data)
+        if self.root > data:
+            if self.left:
+                self.left.insert(data)
             else:
-                self.lchild = BST(data)
+                self.left = BST(data)
         else:
-            if self.rchild:
-                self.rchild.insert(data)
+            if self.right:
+                self.right.insert(data)
             else:
-                self.rchild = BST(data)
+                self.right = BST(data)
 
     
     def search(self, data):
-        if self.key == data:
+        if self.root == data:
             print("Node is Found!")
             return 
-        if data < self.key:
-            if self.lchild:
-                self.lchild.search(data)
+        if data < self.root:
+            if self.left:
+                self.left.search(data)
             else:
                 print("Node is Not present in Tree")
         else:
-            if self.rchild:
-                self.rchild.search(data)
+            if self.right:
+                self.right.search(data)
             else:
                 print("Node is Not present in Tree")
     
-    def preorder(self): # root --> left --> right
-        print(self.key, end=" ")
-        
-        if self.lchild:
-            self.lchild.preorder()
-        
-        if self.rchild:
-            self.rchild.preorder()
-
-    def inorder(self): # left --> root -->  right (we get Nodes in sorted order)
-        if self.lchild:
-            self.lchild.inorder()
-
-        print(self.key, end=" ")
-        
-        if self.rchild:
-            self.rchild.inorder()
-
-    def postorder(self): # left --> right --> root
-        if self.lchild:
-            self.lchild.postorder()
-        
-        if self.rchild:
-            self.rchild.postorder()
-        
-        print(self.key, end=" ")
-
-    
     def delete(self,data):
-        if self.key is None:
+        if self.root is None:
             print("Tree is Empty!")
             return
         
-        if data < self.key:
-            if self.lchild:
-                self.lchild = self.lchild.delete(data)
+        if data < self.root:
+            if self.left:
+                self.left = self.left.delete(data)
             else:
                 print("Given Node is not Present in the Tree")
-        elif data > self.key:
-            if self.rchild:
-                self.rchild = self.rchild.delete(data)
+        elif data > self.root:
+            if self.right:
+                self.right = self.right.delete(data)
             else:
                 print("Given Node is not Present in the Tree")
         else:
-            if self.lchild is None: # handles case for 0 and 1 child
-                temp = self.rchild
+            if self.left is None: # handles case for 0 and 1 child
+                temp = self.right
                 self = None
                 return temp
-            if self.rchild is None: # handles case for 0 and 1 child
-                temp = self.lchild
+            if self.right is None: # handles case for 0 and 1 child
+                temp = self.left
                 self = None
                 return temp
             # handles case for 2 child
-            node = self.rchild
-            while node.lchild:
-                node = node.lchild
-            self.key = node.key
-            self.rchild = self.rchild.delete(node.key)
+            node = self.right
+            while node.left:
+                node = node.left
+            self.root = node.root
+            self.right = self.right.delete(node.root)
         
         return self
             
+    def preorder(self): # root --> left --> right
+        print(self.root, end=" ")
+        
+        if self.left:
+            self.left.preorder()
+        
+        if self.right:
+            self.right.preorder()
 
+    def inorder(self): # left --> root -->  right (we get Nodes in sorted order)
+        if self.left:
+            self.left.inorder()
+
+        print(self.root, end=" ")
+        
+        if self.right:
+            self.right.inorder()
+
+    def postorder(self): # left --> right --> root
+        if self.left:
+            self.left.postorder()
+        
+        if self.right:
+            self.right.postorder()
+        
+        print(self.root, end=" ")
+    
 # case_1
-# root = BST(Non )
+# root = BST(None)
 
 # case_2
 root = BST(10)

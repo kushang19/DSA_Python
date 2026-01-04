@@ -15,6 +15,12 @@
 # Output: 0
 # Explanation: No strictly increasing subarray exists.
 
+
+# // ********************************* FORMULA *********************************
+
+# Increasing streak length = k of increasing subarrays = ( (k - 1) * k ) // 2
+
+
 arr = [1, 4, 5, 3, 7, 9]
 
 def strictly_inc_subarrays(arr):

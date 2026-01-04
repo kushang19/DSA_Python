@@ -14,7 +14,6 @@ Type:
 
 - height of heap is O(log n)
 
-- Note: put root of heap in index 1 instead of 0 as it keeps arithmetic cleaner
 
 
 Topics to learn :
@@ -34,4 +33,4 @@ Right child of index i: 2*i + 2
 
 Parent of index i: (i-1)//2
 
-Last non-leaf node:  (n // 2) - 1 = 4
+Last non-leaf node:  (n // 2) - 1

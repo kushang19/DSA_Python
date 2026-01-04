@@ -1,45 +1,35 @@
-# Anti-Clockwise
-
-a = [1,2,3,4,5]
-# Output: [3, 4, 5, 1, 2]
-d = 2
-
-def rotateArrays(a,d):
+def rotate_left(a, d):
     n = len(a)
-    res = [0] * n
-    # print(res)
-    
-    for i in range(n):
-        if i+d > n-1:
-            d = -(n-d)
-        res[i] = a[i+d]
-        print(i,i+d)
-        # print(a)
-    print(res)
+    d = d % n  # Handle d > n
+    return a[d:] + a[:d]
 
-rotateArrays(a,d)
+print(rotate_left([1,2,3,4,5], 2))
 
 
-#Clockwise
-
-a = [1, 2, 3]
-
-# Output: {3, 1, 2}
-d = 4
-
-def rotateArrays(a,d):
+def rotate_right(a, d):
     n = len(a)
-    res = [0] * n
-    # print(res)
-    
-    for i in range(n):
-        cw = n - d 
-        # print(i,cw)
-        res[i] = a[cw]
-        if cw < n-1:
-            d = d - 1
-        else:
-            d = n
-    print(res)
+    d = d % n
+    return a[n-d:] + a[:n-d]
 
-rotateArrays(a,d)
+
+
+
+
+# Step 1: What happens if we rotate 12 times?
+
+# After 5 rotations → same
+# After 10 rotations → same
+
+# So 12 rotations =
+
+# 10 full cycles + 2 more rotations
+
+
+# So effectively it is just 2 rotations.
+
+# Step 2: Using d % n
+# d = 12 % 5 = 2
+
+
+# So instead of rotating 12 times,
+# we rotate only 2 times → same result, faster, correct.
